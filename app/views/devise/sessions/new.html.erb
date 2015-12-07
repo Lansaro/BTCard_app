@@ -1,0 +1,32 @@
+<html>
+<body background="http://bitcoinboulevard.com/White-Design/W1600x1200.jpg">
+<div class="container">
+  <div class="row">
+    <div class ="col-xs-12">
+      <h2 class="page-header">Log In</h2>
+    </div>
+
+    <div class="col-md-6">
+        <img class="img-responsive" src="http://media.coindesk.com/2014/03/Extremely_Volatile_Bitcoin.jpg" alt="">
+    </div>
+
+      <div class="col-md-6">
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, required: false, autofocus: true %>
+            <%= f.input :password, required: false %>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Log in" %>
+          <%= link_to "Home", test_path, class: 'btn btn-md btn-default' %>
+        </div>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+  </div>
+</div>
+</body>
+</html>

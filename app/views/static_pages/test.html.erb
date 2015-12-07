@@ -1,0 +1,191 @@
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="test">BTCard</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <li><% if user_signed_in? %></li>
+                        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+                        <% else %>
+                        <li><%= link_to "Sign In", new_user_session_path %></li>
+                        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('http://whatdoesthequantsay.com/assets/images/bitcoin_creativecommons.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2 class="apple"><font color="#000000">"Bitcoin is a techno tour de force" - Bill Gates, Microsoft</font></h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('https://cdn.onetime.nl/wp-content/uploads/2015/04/bitnodes-blockchain-bitcoin-onetime.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2 class="apple"><font color="#000000">“Bitcoin is the most important invention in the history of the world since the Internet” - Roger Ver, The Dude</font></h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('https://ip.bitcointalk.org/?u=http%3A%2F%2Fmedia.coindesk.com%2F2014%2F12%2Fbitcoin-evolution-01.jpg&t=556&c=ACOXMuKiE12Cqg');"></div>
+                <div class="carousel-caption">
+                  <h2 class="apple"><font color="#000000">“It's money 2.0, a huge deal” - Chamath Palihapitiya, AOL</font></h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome to BTCard world
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> Product Features </h4>
+                    </div>
+                    <div class="panel-body">
+                          <li>Physical card</li>
+                          <li>Safe storage and secured card</li>
+                          <li>Network of merchants: online / offline</li>
+                          <li>Easy-to-use paypass and POS</li>
+                          <li>Private and customazable</li>
+                          <li>BONUS PROGRAMS WITH CASH REWARDS!</li>
+                        <!-- <a href="http://www.coindesk.com/information/what-is-bitcoin/" class="btn btn-default"> Explore - Coindesk </a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-gift"></i> Free &amp; Open </h4>
+                    </div>
+                    <div class="panel-body">
+                        <p> You can order a card-key to use your Bitcoins on the Blockchain. Just click on "Create Card" in your wallet account and make an order. We will need a little of your information to be able to deliver it to you. Don't forget the cookies!</p>
+                        <!-- <a href="#" class="btn btn-default">Learn More</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-compass"></i> Merchant? </h4>
+                    </div>
+                    <div class="panel-body">
+                        <p>If you are a merchant that is your best choice on the market of payments - bored paying fees to payment gateways? Need a better and cheaper way to accept payments? Just register with us and we will provide you with all necessary equipment!</p>
+                        <!-- <a href="#" class="btn btn-default">Learn More</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">About the Bitcoin</h2>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                  <div class="btn-group-vertical" role="group" aria-label="Bitcoin">
+                    <a href="https://en.wikipedia.org/wiki/Bitcoin" class="btn btn-default btn-block"> <strong> Explore Bitcoin on Wikipedia </strong> </a>
+                    <a href="http://www.coindesk.com/news/" class="btn btn-default btn-block"> <strong> See Bitcoin News on CoinDesk </strong> </a>
+                    <a href="http://www.coindesk.com/price/" class="btn btn-default btn-block"> <strong> Check the Bitcoin Current Price on CoinDesk </strong> </a>
+                  </div>
+                </ul>
+                <p>Bitcoin can be used to buy things electronically. In that sense, it’s like conventional dollars, euros, or yen, which are also traded digitally. However, bitcoin’s most important characteristic, and the thing that makes it different to conventional money, is that it is decentralized. No single institution controls the bitcoin network. This puts some people at ease, because it means that a large bank can’t control their money.</p>
+                <p>A software developer called Satoshi Nakamoto proposed bitcoin, which was an electronic payment system based on mathematical proof. The idea was to produce a currency independent of any central authority, transferable electronically, more or less instantly, with very low transaction fees.</p>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="http://cdn.arstechnica.net/wp-content/uploads/2013/11/trading-place-bitcoin.jpg" alt="">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p><strong>Try some Bitcoins today! We will give you 1 BTC after 2 weeks of Card usage! Bring friends and we will also award you with 0.1 per each person!</strong></p>
+                </div>
+                <div class="col-md-4">
+                  <a>
+                  <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-md btn-default btn-block' %>
+                  </a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>

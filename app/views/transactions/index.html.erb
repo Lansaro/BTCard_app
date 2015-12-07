@@ -1,0 +1,41 @@
+<div class="row-fluid">
+  <div class="panel panel-default">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h1> <%= @wallet.account%>
+          <%=link_to "My Wallet", wallet_path, class: 'btn btn-default btn-xs'%>
+        </h1>
+      </div>
+      <div class="panel-body">
+        <p> <%= @wallet.private_key %> </p>
+        <p> <%= @wallet.active %> </p>
+      </div>
+      <div> <%= link_to "Create a card", new_wallet_card_path(@wallet), class: 'btn btn-default btn-lg'%> </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Wallet Cards</div>
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th> Num </th>
+                <th> Nickname </th>
+                <th> Active </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @wallet.cards.each do |card| %>
+              <tr>
+                <td> <%= card.number %> </td>
+                <td> <%= card.nickname %> </td>
+                <td> <%= card.active %> </td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,77 @@
+<html>
+<body background="http://bitcoinboulevard.com/White-Design/W1600x1200.jpg">
+<div class="container">
+  <div class="row-fluid">
+    <div class="col-md-12">
+      <h1 class="page-header"> User: <%= @wallet.user.email%> </h1>
+    </div>
+        <div class="panel-body">
+          <p> Wallet: <%= @wallet.account%> </p>
+          <p> Private Key: <%= @wallet.private_key %> </p>
+          <p> <%= @wallet.active %> </p>
+        </div>
+        <div class="panel-body">
+        <div class="btn-group" "btn-group-sm" role="group" aria-label="Create a Card">
+          <%= link_to "Create a card", new_wallet_card_path(@wallet), class: 'btn btn-default btn-lg'%>
+          <%= link_to "Home", test_path, class: 'btn btn-default btn-lg' %>
+          <%= link_to "Sign out", destroy_user_session_path, class: 'btn btn-default btn-lg', :method => :delete %>
+        </div>
+        </div>
+  </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Wallet Cards</div>
+          <div class="panel-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th> Card number </th>
+                  <th> Nickname </th>
+                  <th> Active </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @wallet.cards.each do |card| %>
+                <tr>
+                  <td> <%= card.id %> <%= card.number %> </td>
+                  <td> <%= card.nickname %> </td>
+                  <td> <%= card.active %> </td>
+                  <td> <%=link_to "Create New Transaction", new_wallet_card_transaction_path(card.wallet.id, card.id), class: 'btn btn-default btn-xs' %>
+
+                <!-- here be dragons -->
+  <td>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th> Transaction number </th>
+                      <th> Description </th>
+                      <th> Amount </th>
+                      <th> Status </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% card.transactions.each do |transaction| %>
+                    <tr>
+                      <td> <%= transaction.id %> </td>
+                      <td> <%= transaction.description %> </td>
+                      <td> <%= transaction.amount %> </td>
+                      <td> <%= transaction.status %> </td>
+                    </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+
+
+  </td> </tr> <!-- end dragons -->
+                <% end %>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

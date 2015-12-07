@@ -1,0 +1,7 @@
+<div class="panel-body">
+  <%= simple_form_for [@wallet, @card] do |f| %>
+    <%= f.input :nickname, label: false, input_html: {placeholder: "Nickname"} %>
+    <%= f.input :active %>
+    <%= f.submit "Submit".html_safe, class: "btn btn-lg btn-success"%>
+  <%end %>
+</div>
