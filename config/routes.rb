@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get 'test', to: 'static_pages#test', as: 'test'
   root 'static_pages#test'
 
-  resources :poss
   resources :users
   resources :transactions
 
