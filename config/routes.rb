@@ -5,6 +5,14 @@ Rails.application.routes.draw do
   get 'test', to: 'static_pages#test', as: 'test'
   root 'static_pages#test'
 
+  #api
+  namespace :api do
+    resources :wallets, only: [:show, :update]
+    resources :transactions, only: [:index, :create, :update, :destroy]
+    resources :pos, only: [:show]
+    resources :sessions, only: [:create]
+  end
+
   resources :users
   resources :transactions
 
