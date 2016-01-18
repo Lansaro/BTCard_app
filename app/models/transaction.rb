@@ -2,18 +2,18 @@
 #
 # Table name: transactions
 #
-#  id             :integer          not null, primary key
-#  amount         :string
-#  card_id        :integer
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  status         :string
-#  description    :string
-#  foreign_wallet :string
-#  wallet         :string
-#  private_key    :string
-#  password       :string
-#  my_password    :string
+#  id              :integer          not null, primary key
+#  amount          :string
+#  card_id         :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  status          :string
+#  description     :string
+#  private_key     :string
+#  password        :string
+#  my_password     :string
+#  receiver_wallet :string
+#  sender_wallet   :string
 #
 
 require 'rubygems' if RUBY_VERSION < '1.9'
@@ -25,6 +25,7 @@ require 'uri'
 class Transaction < ActiveRecord::Base
   belongs_to :card
   belongs_to :user
+
   after_create :send_transaction_to_block_chain
 
   def send_transaction_to_block_chain

@@ -32,6 +32,7 @@ gem 'active_hash_relation', github: 'kollegorna/active_hash_relation'
 gem 'pundit', '~> 0.3.0'
 gem 'active_model_serializers', '0.9.2'
 gem 'rspec-api_helpers', github: 'kollegorna/rspec-api_helpers'
+gem 'net-ssh'
 
 #BTC exchange
 gem 'blockchain'

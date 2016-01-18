@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118042745) do
+ActiveRecord::Schema.define(version: 20151214052330) do
 
   create_table "cards", force: :cascade do |t|
     t.string   "number"
@@ -61,15 +61,15 @@ ActiveRecord::Schema.define(version: 20151118042745) do
   create_table "transactions", force: :cascade do |t|
     t.string   "amount"
     t.integer  "card_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "status"
     t.string   "description"
-    t.string   "foreign_wallet"
-    t.string   "wallet"
     t.string   "private_key"
     t.string   "password"
     t.string   "my_password"
+    t.string   "receiver_wallet"
+    t.string   "sender_wallet"
   end
 
   add_index "transactions", ["card_id"], name: "index_transactions_on_card_id"

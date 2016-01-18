@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   root 'static_pages#test'
 
   #api
-  namespace :api do
-    resources :wallets, only: [:show, :update]
-    resources :transactions, only: [:index, :create, :update, :destroy]
-    resources :pos, only: [:show]
-    resources :sessions, only: [:create]
-  end
+  # namespace :api do
+  #   resources :wallets, only: [:show, :update]
+  #   resources :transactions, only: [:index, :create, :update, :destroy]
+  #   resources :pos, only: [:show]
+  #   resources :sessions, only: [:create]
+  # end
 
   resources :users
   resources :transactions
