@@ -16,6 +16,8 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  transaction_id         :integer
+#  merchant               :boolean
+#  pos                    :string
 #
 
 class User < ActiveRecord::Base

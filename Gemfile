@@ -33,6 +33,7 @@ gem 'pundit', '~> 0.3.0'
 gem 'active_model_serializers', '0.9.2'
 gem 'rspec-api_helpers', github: 'kollegorna/rspec-api_helpers'
 gem 'net-ssh'
+gem 'annotate'
 
 #BTC exchange
 gem 'blockchain'
@@ -47,7 +48,6 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'binding_of_caller'
   gem 'better_errors'
-  gem 'annotate'
   gem 'spring'
   gem 'web-console', '2.0.0'
 end

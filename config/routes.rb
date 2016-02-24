@@ -5,14 +5,6 @@ Rails.application.routes.draw do
   get 'test', to: 'static_pages#test', as: 'test'
   root 'static_pages#test'
 
-  #api
-  # namespace :api do
-  #   resources :wallets, only: [:show, :update]
-  #   resources :transactions, only: [:index, :create, :update, :destroy]
-  #   resources :pos, only: [:show]
-  #   resources :sessions, only: [:create]
-  # end
-
   resources :users
   resources :transactions
 
@@ -20,6 +12,14 @@ Rails.application.routes.draw do
     resources :cards, except: [:show] do
       resources :transactions, except: [:show]
     end
+  end
+
+  #api
+  namespace :api do
+    resources :users, only: [:create, :show, :update, :destroy]
+    resources :wallets, only: [:show, :update]
+    resources :transactions, only: [:index, :create, :update, :destroy]
+    resources :sessions, only: [:create]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
